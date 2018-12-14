@@ -14,6 +14,10 @@ load_dc.py dumps the settings for the variables (mean, variance, default)
 Needs to be given the dataCollection.dc used for the training.
 Also check in the file of the class for the exact input variables and
 wether they match the ones hard coded in load_dc.py
+Then run something like:
+```
+python3 lwtnn/converters/kerasfunc2json.py --arch_file DeepCSV_arch.json --variables_file DeepCSV_var.json --hdf5_file DeepCSV_weights.h5 > DeepCSV_Phase2.json
+```
 
 What is this?
 -------------
