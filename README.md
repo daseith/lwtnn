@@ -9,6 +9,12 @@ Lightweight Trained Neural Network
 [scan-img]: https://scan.coverity.com/projects/9285/badge.svg
 [scan-link]: https://scan.coverity.com/projects/lwtnn-lwtnn
 
+Use the h5 file containing the model. Extract the architecture and the weights.
+load_dc.py dumps the settings for the variables (mean, variance, default)
+Needs to be given the dataCollection.dc used for the training.
+Also check in the file of the class for the exact input variables and
+wether they match the ones hard coded in load_dc.py
+
 What is this?
 -------------
 
