@@ -2,7 +2,25 @@ from DeepJetCore.DataCollection import DataCollection
 from pprint import pprint
 
 dc = DataCollection()
-dc.readFromFile('dc/dataCollection.dc')
+dc.readFromFile('dc/dataCollection.dc')#/storage/9/dseith/DeepJet/deepCSV/results/../../Ntuples/Thu_135917_batch/dataCollections/deepCSV/train/dataCollection.dc')
+#dc.readFromFile('/storage/9/dseith/DeepJet/deepCSV/results/../../Ntuples/Thu_135917_batch/dataCollections/deepFlavour_FT_reg/train/dataCollection.dc')
+#pprint (dc.means[0])
+#print '-'*100
+#pprint (dc.means[1])
+#print '-'*100
+#pprint (dc.means.dtype.names)
+#pprint (dc.means[0][0].dtype)
+#pprint (dc.useweights)
+#pprint (dc.weighter)
+#pprint (dc.samples)
+#pprint (dc.sampleentries)
+#pprint (dc.originRoots)
+#pprint (dc.nsamples)
+#pprint (dc.useweights)
+##pprint (dc.__batchsize)
+pprint (dc.dataclass)
+#pprint (dc.weighter)
+#pprint (dc.means)
 
 
 six_times = [
@@ -62,7 +80,7 @@ for mean, stddev, name in zip(means, stddevs, varnames):
             variables.append( { 'name' : var, 'scale' : stddev, 'offset' : mean , 'defaults' : 0.0} )
 
 #pprint (variables)
-variables = [ { 'name' : 'node_0', 'variables' : variables } ]
+#variables = [ { 'name' : 'node_0', 'variables' : variables } ]
 print len(variables)
 
 outputs = [
@@ -75,9 +93,9 @@ outputs = [
 
 var_dic = {}
 
-var_dic['outputs'] = [{ 'labels' : outputs, 'name' : 'dense_6_0' }]
+var_dic['class_labels'] = outputs#[{ 'labels' : outputs, 'name' : 'dense_6_0' }]
 var_dic['inputs'] = variables
-var_dic["input_sequences"] = []
+#var_dic["input_sequences"] = []
 #var_dic['inputs'] = variables
 #var_dic['class_labels'] = outputs
 #var_dic['keras_version'] = '2.0.0'

@@ -14,9 +14,16 @@ load_dc.py dumps the settings for the variables (mean, variance, default)
 Needs to be given the dataCollection.dc used for the training.
 Also check in the file of the class for the exact input variables and
 wether they match the ones hard coded in load_dc.py
+The architecture file is created with save_architecture.py
+The architecture of DeepCSV is hard coded in this script at sequential model --> Check that it is indeed correct, 
+before using!
+because in the actual h5 file it is not stored as sequential model, but as a functional API model.
+Problem is, that these can't be used with keras2json.py but one needs to use kerasfunc2json.py
+The output of kerasfunc2json.py however seems to not be compatible with the input that CMSSW 
+expects ( at least it produces an error when run).
 Then run something like:
 ```
-python3 lwtnn/converters/kerasfunc2json.py --arch_file DeepCSV_arch.json --variables_file DeepCSV_var.json --hdf5_file DeepCSV_weights.h5 > DeepCSV_Phase2.json
+python3 lwtnn/converters/keras2json.py --arch_file DeepCSV_arch.json --variables_file DeepCSV_var.json --hdf5_file DeepCSV_weights.h5 > DeepCSV_Phase2.json
 ```
 
 What is this?
